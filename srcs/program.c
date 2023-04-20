@@ -20,7 +20,8 @@ void	calc_cmass(t_program *program)
 	{
 		program->c_mass_pos.x += program->particles[i].pos.x;
 		program->c_mass_pos.y += program->particles[i].pos.y;
+		i++;
 	}
-	program->c_mass_pos.x /= program->c_mass;
-	program->c_mass_pos.y /= program->c_mass;
+	program->c_mass_pos.x /= program->mass;
+	program->c_mass_pos.y /= program->mass;
 }

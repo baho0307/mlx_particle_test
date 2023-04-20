@@ -6,5 +6,6 @@ int	main(void)
 
 	program = create_program(10.0, 20);
 	create_space(&program);
+	mlx_loop_hook(program.mlx.mlx, render, &program);
 	mlx_loop(program.mlx.mlx);
 }

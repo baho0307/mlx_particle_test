@@ -9,14 +9,25 @@ t_vector	v_zero()
 	return (v);
 }
 
-void	v_multiplyf(t_vector v, float f)
+t_vector	v_multiplyf(t_vector v, float f)
 {
-	v.x *= f;
-	v.y *= f;
+	t_vector	r;
+
+	r.x = v.x * f;
+	r.y = v.y * f;
+	return (r);
 }
 
-void	v_add(t_vector v, t_vector u)
+t_vector	v_add(t_vector a, t_vector b)
 {
-	v.x += u.x;
-	v.y += u.y;
+	t_vector	v;
+
+	v.x = a.x + b.x;
+	v.y = a.y + b.y;
+	return (v);
+}
+
+float	v_dis(t_vector	a, t_vector	b)
+{
+	return (sqrt(pow(a.x - b.x, 2) + pow(a.y - b.y, 2)));
 }

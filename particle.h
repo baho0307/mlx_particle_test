@@ -4,6 +4,8 @@
 #include "mlx_linux/mlx.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <fcntl.h>
+#include <math.h>
 
 typedef struct s_vector
 {
@@ -40,6 +42,7 @@ typedef struct s_program
 	t_particle	*particles;
 	int			p_count;
 	t_vector	c_mass_pos;
+	float		mass;
 	float		c_mass;
 	t_img		space;
 }	t_program;
@@ -50,6 +53,10 @@ void		create_space(t_program *program);
 void		my_pixel_put(t_img *data, int x, int y, int color);
 int			render(t_program *program);
 t_vector	v_zero();
-void		calc_mass(t_program *program);
+t_vector	v_multiplyf(t_vector v, float f);
+t_vector	v_add(t_vector a, t_vector b);
+float		v_dis(t_vector	a, t_vector	b);
+void		calc_cmass(t_program *program);
+void	calc_particles(t_program *program);
 
 #endif
